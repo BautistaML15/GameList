@@ -1,6 +1,8 @@
 import logo from "../assets/ps5_logo.png"
 
+
 const Header = ({name}) =>{
+    
 
     return(
         <>
@@ -11,9 +13,12 @@ const Header = ({name}) =>{
                     <h1 className="text-3xl font-bold">GameList</h1>
                 </div>
                 <div>
-                    <input className="border-2 border-solid rounded-xl bg-white py-1 px-1" class="search" type="search" placeholder="Search games..." />
+                    <input className="border-2 border-solid rounded-xl bg-white py-1 px-1"
+                    name="search" type="search" placeholder="Search games..."
+                    />
                     <h3>test {name}</h3>
                 </div>
+
             </article>
         </header>
         </>
