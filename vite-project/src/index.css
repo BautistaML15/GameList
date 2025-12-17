@@ -48,6 +48,14 @@
     @apply px-1 py-1.5 xl:py-2 lg:py-2 xl:pr-240 lg:pr-106 md:pr-74 pr-80 mx-1 my-1 border-1 border-solid rounded-lg;
 }
 
+.imgBtn {
+    @apply inline-block mx-1 my-2 cursor-pointer bg-[#4F46E5] text-white rounded-md hover:scale-100 hover:bg-[#382fc0]
+            xl:px-3 xl:py-2
+            lg:px-3 lg:py-2
+            md:px-2 md:py-2
+            px-2.5 py-1.5;
+}
+
 .addGameBtn {
     @apply xl:px-3 xl:py-2 lg:px-3 lg:py-2 md:px-2 md:py-2 px-2.5 py-1.5
             mx-1 my-2 rounded-lg bg-[#4F46E5] text-white hover:scale-105 hover:bg-[#382fc0] duration-300;
@@ -88,15 +96,23 @@
 }
 
 .conField {
-    @apply bg-white border-2 border-solid rounded-lg xl:p-10 lg:p-6 md:p-6 p-6 xl:flex xl:flex-wrap xl:grid xl:grid-cols-3 lg:flex lg:flex-wrap lg:grid lg:grid-cols-2;
+    @apply bg-white border-2 border-solid rounded-lg xl:p-6 lg:p-5 md:p-4 p-4 xl:flex xl:flex-wrap xl:grid xl:grid-cols-3 lg:flex lg:flex-wrap lg:grid lg:grid-cols-2;
 }
 
 .cardCon {
-    @apply bg-[#1F2937] text-white border-b rounded-lg border-gray-300 py-3 text-black flex justify-between items-start
+    @apply bg-[#1F2937] text-white border-b rounded-lg border-gray-300 py-3 text-black flex xl:flex-col lg:flex-col justify-between items-start
             xl:mx-2 xl:my-2 xl:px-4 xl:py-4
             lg:mx-2 lg:my-2 lg:px-3 lg:py-4
-            md:mx-2 md:my-2 md:px-5 md:py-3
+            md:mx-1 md:my-2 md:px-3 md:py-3
             my-2 px-3 py-2;
+}
+
+.gameImg {
+    @apply  object-cover mb-2 rounded-lg
+            xl:w-100 xl:h-50
+            lg:w-100 lg:h-40
+            md:w-43 md:h-28
+            w-45 h-28;
 }
 
 .gTitle {
@@ -107,8 +123,18 @@
     @apply mt-2 xl:p-2 lg:p-2 p-1 border rounded bg-[#1F2937];
 }
 
+.btnCon {
+    @apply xl:flex xl:flex-row xl:mt-4 xl:gap-1
+            lg:flex lg:flex-row lg:mt-2 lg:gap-1
+            md:flex md:flex-col md:gap-2
+            sm:flex sm:flex-col sm:gap-2;
+}
+
 .cardBtn {
-    @apply px-3 py-1 mx-3 lg:px-3 lg:py-1 lg:mx-3 md:px-3 md:py-1 md:mx-3 px-2 py-1 mx-5;
+    @apply xl:px-6.5 xl:py-1 xl:mx-1
+            lg:px-4 lg:py-1 lg:mx-1
+            md:px-3 md:py-1 md:mx-1 
+            px-3 py-1 mx-1;
 }
 
 .editBtn {

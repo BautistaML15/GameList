@@ -13,13 +13,16 @@ export default function Container3({ games = [], deleteGame, editGameStatus }) {
                 ) : (
                     games.map((game, index) => (
                         <div key={index} className="cardCon">
+                            {game.image && (
+                                <img src={game.image} alt={game.title} className="gameImg" />
+                            )}
 
                             <div>
                                 <h3 className="gTitle">{game.title}</h3>
 
                                 <p><strong>Status:</strong> {game.status}</p>
 
-                                {/* If editing this game, show dropdown */}
+                                {/* Edit Status Drop Down */}
                                 {editingIndex === index && (
                                     <select className="dropBtn"
                                         onChange={(e) => editGameStatus(index, e.target.value)}
@@ -35,7 +38,7 @@ export default function Container3({ games = [], deleteGame, editGameStatus }) {
                                 )}
                             </div>
 
-                            <div className="flex flex-col gap-2">
+                            <div className="btnCon">
                                 <button
                                     onClick={() =>
                                         setEditingIndex(

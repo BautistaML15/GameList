@@ -4,15 +4,28 @@ export default function Container1({ addGame }) {
   const [title, setTitle] = useState("");
   const [link, setLink] = useState("");
   const [status, setStatus] = useState("");
+  const [image, setImage] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    addGame({ title, link, status });
+    addGame({ title, link, status, image });
 
     setTitle("");
     setLink("");
     setStatus("");
+    setImage(null);
+  };
+
+  const handleImageUpload = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImage(reader.result);
+      };
+      reader.readAsDataURL(file);
+    }
   };
 
   return (
@@ -58,6 +71,19 @@ export default function Container1({ addGame }) {
             <option value="completed">Completed</option>
           </select>
         </div>
+
+        <div>
+          <label className="imgBtn">
+            Choose Image
+            <input
+              type="file"
+              accept="image/*"
+              className="hidden"
+              onChange={handleImageUpload}
+            />
+          </label>
+        </div>
+
 
         <button
           type="submit"
