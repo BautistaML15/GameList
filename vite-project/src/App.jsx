@@ -1,15 +1,16 @@
 import Header from "../src/components/Header.jsx";
-import Container1 from "../src/components/Container1.jsx"
-
+import GameManager from "../src/components/GameManager.jsx"
+import Footer from "../src/components/Footer.jsx"
 
 
 function App() {
 
   return (
     <>
-      <main className="bg-[#1F2937]">
-      <Header name="legends"/>
-      <Container1 />
+      <main className="bg-[#1F2937] min-h-screen">
+      <Header />
+      <GameManager />
+      <Footer />
       </main>
     </>
   )
