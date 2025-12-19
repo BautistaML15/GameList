@@ -9,41 +9,38 @@ export default function Container3({ games = [], deleteGame, editGameStatus }) {
 
             <article className="conField">
                 {games.length === 0 ? (
-                    <p className="text-black text-center">No games found.</p>
+                    <div className="col-span-full flex items-center justify-center text-center">
+                        <p className="text-black">No games found.</p>
+                    </div>
                 ) : (
                     games.map((game, index) => (
-                        <div key={index} className="cardCon">
+                        <div key={game.id} className="cardCon">
                             {game.image && (
                                 <img src={game.image} alt={game.title} className="gameImg" />
                             )}
 
-                            <div>
+                            <article>
                                 <h3 className="gTitle">{game.title}</h3>
-
                                 <p><strong>Status:</strong> {game.status}</p>
 
                                 {/* Edit Status Drop Down */}
-                                {editingIndex === index && (
-                                    <select className="dropBtn"
+                                <div>
+                                    <select className={`dropBtn ${
+                                        editingIndex === index ? "opacity-100" : "opacity-0 pointer-events-none"
+                                    }`}
                                         onChange={(e) => editGameStatus(index, e.target.value)}
                                         defaultValue={game.status}>
-
                                         <option value="want-to-play">Want to play</option>
-
                                         <option value="playing">Playing</option>
-
                                         <option value="completed">Completed</option>
-
                                     </select>
-                                )}
-                            </div>
+                                </div>
+                            </article>
 
                             <div className="btnCon">
                                 <button
                                     onClick={() =>
-                                        setEditingIndex(
-                                            editingIndex === index ? null : index
-                                        )
+                                        setEditingIndex(editingIndex === index ? null : index)
                                     }
                                     className="cardBtn editBtn"
                                 >

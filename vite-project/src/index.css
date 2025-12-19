@@ -2,7 +2,11 @@
 
 /* Header */
 .header {
-    @apply xl:py-9 lg:py-9 md:py-9 py-7 xl:px-15 lg:px-15 md:px-10 px-3 bg-[#4F46E5];
+    @apply bg-[#4F46E5]
+            xl:px-15 xl:py-9
+            lg:px-15 lg:py-9
+            md:px-10 md:py-9
+            px-3 py-7;
 }
 
 .logoImg {
@@ -14,58 +18,61 @@
 }
 
 .search {
-    @apply border-2 border-solid rounded-xl bg-white xl:py-1 xl:px-2 lg:py-1 lg:px-2 md:py-1 md:px-2 pl-1;
+    @apply border-2 border-solid rounded-xl bg-white
+            xl:py-1 xl:px-2
+            lg:py-1 lg:px-2
+            md:py-1 md:px-2
+            pl-1;
 }
 /* Header */
 
 
 /* Container 1 */
 .container1 {
-    @apply bg-white border-2 border-solid rounded-xl
-            xl:px-5 xl:py-4 xl:mx-90 xl:my-8
-            lg:px-5 lg:py-4 lg:mx-45 lg:my-8
-            md:px-4 md:py-4 md:mx-30 md:my-8
-            px-4 py-3 mx-10 my-8;
+  @apply bg-white border-2 border-solid rounded-xl
+         xl:px-10 xl:py-8 xl:mx-90 xl:max-w-7xl
+         lg:px-8 lg:py-6 lg:mx-45 lg:max-w-4xl
+         md:px-6 md:py-5 md:mx-30 md:max-w-3xl
+         px-4 py-4 my-8 mx-10 max-w-3xl;
 }
 
 .title1 {
-    @apply font-bold
-            xl:text-2xl xl:my-5 
-            lg:text-2xl lg:my-4 
-            md:text-xl md:my-3 
-            text-xl my-2;
+  @apply font-bold
+         xl:text-2xl xl:my-5
+         lg:text-2xl lg:my-4
+         md:text-xl md:my-3
+         text-xl my-2;
 }
 
 .gameTitle {
-    @apply m-1 font-bold xl:text-lg lg:text-lg md:text-lg;
+  @apply m-1 font-bold xl:text-lg lg:text-lg md:text-lg text-base;
 }
 
-.inputField {
-    @apply px-1 py-1.5 xl:py-2 lg:py-2 xl:pr-235 lg:pr-106 md:pr-74 pr-80 mx-1 my-1 border-1 border-solid rounded-lg;
-}
-
-.statusField {
-    @apply px-1 py-1.5 xl:py-2 lg:py-2 xl:pr-240 lg:pr-106 md:pr-74 pr-80 mx-1 my-1 border-1 border-solid rounded-lg;
+.inputField, .statusField {
+  @apply block w-full max-w-6xl px-4 py-2 border border-solid rounded-lg mx-auto my-2;
 }
 
 .imgBtn {
-    @apply inline-block mx-1 my-2 cursor-pointer bg-[#4F46E5] text-white rounded-md hover:scale-100 hover:bg-[#382fc0]
-            xl:px-3 xl:py-2
-            lg:px-3 lg:py-2
-            md:px-2 md:py-2
-            px-2.5 py-1.5;
+  @apply inline-block mx-1 my-2 cursor-pointer bg-[#4F46E5] text-white rounded-md hover:scale-100 hover:bg-[#382fc0]
+         xl:px-3 xl:py-2
+         lg:px-3 lg:py-2
+         md:px-2 md:py-2
+         px-2.5 py-1.5;
 }
 
 .addGameBtn {
-    @apply xl:px-3 xl:py-2 lg:px-3 lg:py-2 md:px-2 md:py-2 px-2.5 py-1.5
-            mx-1 my-2 rounded-lg bg-[#4F46E5] text-white hover:scale-105 hover:bg-[#382fc0] duration-300;
+  @apply xl:px-3 xl:py-2 lg:px-3 lg:py-2 md:px-2 md:py-2 px-2.5 py-1.5
+         mx-1 my-2 rounded-lg bg-[#4F46E5] text-white hover:scale-105 hover:bg-[#382fc0] duration-300;
 }
 /* Container 1 */
 
 
 /* Container 2 */
 .container2 {
-    @apply xl:mx-90 xl:my-8 lg:mx-45 lg:my-8 md:mx-30 md:my-8 mx-10 my-3;
+    @apply xl:mx-90 xl:my-8
+            lg:mx-45 lg:my-8
+            md:mx-30 md:my-8
+            mx-10 my-3;
 }
 
 .title2 {
@@ -73,7 +80,12 @@
 }
 
 .filterBtn {
-    @apply xl:px-3 xl:py-2 lg:px-3 lg:py-2 md:px-2 md:py-2 px-1.5 py-1.5 mx-1 my-1 rounded-lg duration-300 hover:scale-105;
+    @apply mx-1 my-1 rounded-lg duration-300 hover:scale-105
+            xl:px-3 xl:py-2
+            lg:px-3 lg:py-2
+            md:px-2 md:py-2
+            sm:px-1.5 sm:py-1.5
+            px-0.5 py-1;
 }
 
 .activeBtn {
@@ -88,7 +100,11 @@
 
 /* Container 3 */
 .container3 {
-    @apply xl:mx-90 lg:mx-45 md:mx-30 mx-10 my-4 xl:my-8 lg:my-8 md:my-8 text-white;
+    @apply text-white
+            xl:mx-90 xl:my-8 xl:max-w-7xl
+            lg:mx-45 lg:my-8
+            md:mx-30 md:my-8
+            mx-10 my-4;
 }
 
 .title3 {
@@ -96,23 +112,28 @@
 }
 
 .conField {
-    @apply bg-white border-2 border-solid rounded-lg xl:p-6 lg:p-5 md:p-4 p-4 xl:flex xl:flex-wrap xl:grid xl:grid-cols-3 lg:flex lg:flex-wrap lg:grid lg:grid-cols-2;
+    @apply bg-white border-2 border-solid rounded-lg
+            xl:p-5 xl:grid xl:grid-cols-2 gap-6
+            lg:p-5 lg:grid lg:grid-cols-2
+            md:p-4 p-4;
 }
 
 .cardCon {
     @apply bg-[#1F2937] text-white border-b rounded-lg border-gray-300 py-3 text-black flex xl:flex-col lg:flex-col justify-between items-start
-            xl:mx-2 xl:my-2 xl:px-4 xl:py-4
-            lg:mx-2 lg:my-2 lg:px-3 lg:py-4
+            xl:mx-1 xl:my-2 xl:px-4 xl:py-4 xl:flex xl:flex-col xl:justify-between xl:items-start
+            lg:mx-1 lg:my-1 lg:px-3 lg:py-4
             md:mx-1 md:my-2 md:px-3 md:py-3
-            my-2 px-3 py-2;
+            sm:my-2 sm:px-3 sm:py-2
+            px-3 py-2;
 }
 
 .gameImg {
     @apply  object-cover mb-2 rounded-lg
-            xl:w-100 xl:h-50
-            lg:w-100 lg:h-40
+            xl:w-full xl:h-65
+            lg:w-full lg:h-40
             md:w-43 md:h-28
-            w-45 h-28;
+            sm:w-45 sm:h-28
+            w-22 h-25;
 }
 
 .gTitle {
@@ -124,17 +145,19 @@
 }
 
 .btnCon {
-    @apply xl:flex xl:flex-row xl:mt-4 xl:gap-1
+    @apply xl:flex xl:flex-row xl:mt-4 xl:gap-2
             lg:flex lg:flex-row lg:mt-2 lg:gap-1
             md:flex md:flex-col md:gap-2
-            sm:flex sm:flex-col sm:gap-2;
+            sm:flex sm:flex-col sm:gap-2
+            flex flex-col gap-2;
 }
 
 .cardBtn {
-    @apply xl:px-6.5 xl:py-1 xl:mx-1
-            lg:px-4 lg:py-1 lg:mx-1
-            md:px-3 md:py-1 md:mx-1 
-            px-3 py-1 mx-1;
+    @apply xl:px-4 xl:py-1 mx-1
+            lg:px-4 lg:py-1
+            md:px-3 md:py-1
+            sm:px-3 sm:py-1
+            px-1;
 }
 
 .editBtn {

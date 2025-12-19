@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 export default function Container1({ addGame }) {
   const [title, setTitle] = useState("");
@@ -6,35 +6,54 @@ export default function Container1({ addGame }) {
   const [status, setStatus] = useState("");
   const [image, setImage] = useState(null);
 
+  const fileInputRef = useRef(null);
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    addGame({ title, link, status, image });
+    if (!image) {
+      alert("Please select an image");
+      return;
+    }
 
+    const newGame = {
+      id: Date.now(), // unique key
+      title,
+      link,
+      status,
+      image
+    };
+
+    addGame(newGame);
+
+    // Reset form
     setTitle("");
     setLink("");
     setStatus("");
     setImage(null);
+
+    if (fileInputRef.current) fileInputRef.current.value = null;
   };
 
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setImage(reader.result);
-      };
-      reader.readAsDataURL(file);
-    }
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onloadend = () => setImage(reader.result);
+    reader.readAsDataURL(file);
+
+    // Reset input so the same image can be uploaded again
+    e.target.value = null;
   };
 
   return (
     <section className="container1">
       <h2 className="title1">Add New Games</h2>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="flex flex-col">
         <div>
-          <p className="gameTitle text-md">Game Title</p>
+          <p className="gameTitle">Game Title</p>
           <input
             className="inputField"
             type="text"
@@ -46,7 +65,7 @@ export default function Container1({ addGame }) {
         </div>
 
         <div>
-          <p className="gameTitle text-md">Game Link</p>
+          <p className="gameTitle">Game Link</p>
           <input
             className="inputField"
             type="url"
@@ -58,7 +77,7 @@ export default function Container1({ addGame }) {
         </div>
 
         <div>
-          <p className="gameTitle text-md">Status</p>
+          <p className="gameTitle">Status</p>
           <select
             className="statusField"
             value={status}
@@ -76,6 +95,7 @@ export default function Container1({ addGame }) {
           <label className="imgBtn">
             Choose Image
             <input
+              ref={fileInputRef}
               type="file"
               accept="image/*"
               className="hidden"
@@ -84,11 +104,7 @@ export default function Container1({ addGame }) {
           </label>
         </div>
 
-
-        <button
-          type="submit"
-          className="addGameBtn"
-        >
+        <button type="submit" className="addGameBtn">
           Add Game
         </button>
       </form>
